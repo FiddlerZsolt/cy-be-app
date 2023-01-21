@@ -34,8 +34,8 @@ Only admin user can delete other users, and list other users' data or addresses.
 5. Address handling (admins can CRUD everyone's addresses, normal users only their own)
     - **GET** /user/:id/addresses - List all address from a specific user
     - **POST** /user/:id/addresses - Add new address to a specific user
-    - **PUT** /addresses/:id - Update a specific address
-    - **DELETE** /addresses/:id - Delete a specific address
+    - **PUT** /users/:userId/addresses/:id - Update a specific address
+    - **DELETE** /users/:userId/addresses/:id - Delete a specific address
 
 ## NPM scripts
 
