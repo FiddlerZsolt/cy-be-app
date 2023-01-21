@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "27e4c7aa-246f-4b53-9467-2970b3184d26",
+		"name": "codeyard_backend_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15828690"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@34565ehh34645w.com\",\n    \"password\": \"qweq\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users/63cc4be4c99285ea19498ff3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc4be4c99285ea19498ff3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"admin@admin.com\",\n        \"firstName\": \"Edited\",\n        \"lastName\": \"Admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/63cc4838225fd0426e16948a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc4838225fd0426e16948a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"test@test.com\",\n        \"password\": \"test\",\n        \"firstName\": \"Teszt\",\n        \"lastName\": \"Elek\"\n    },\n    \"deviceId\": \"iphone\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/registration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users/63cc423cdf2cf5782df074a2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc423cdf2cf5782df074a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Addresses",
+			"item": [
+				{
+					"name": "add address to user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"zip_code\": 6720,\n    \"country\": \"Magyarorszag\",\n    \"city\": \"Szeged\",\n    \"street\": \"Hosszú sgt.\",\n    \"number\": 22\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/63cc4be4c99285ea19498ff3/address",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc4be4c99285ea19498ff3",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update address to user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"zip_code\": 6720,\n    \"country\": \"Magyarorszag\",\n    \"city\": \"Budapest\",\n    \"street\": \"Hosszú sgt. edited\",\n    \"number\": 42\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/63cc41e41e45605bdd4d8184/address/63cc4215df2cf5782df07493",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc41e41e45605bdd4d8184",
+								"address",
+								"63cc4215df2cf5782df07493"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete address to user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"zip_code\": 6720,\n    \"country\": \"Magyarorszag\",\n    \"city\": \"Szeged\",\n    \"street\": \"Kussuth Lajos sgt. edited\",\n    \"number\": 23\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/63cc41e41e45605bdd4d8184/address/63cc4212df2cf5782df0748a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc41e41e45605bdd4d8184",
+								"address",
+								"63cc4212df2cf5782df0748a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all address by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users/63cc48c5225fd0426e1694b5/address",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"63cc48c5225fd0426e1694b5",
+								"address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
